@@ -28,7 +28,7 @@ services:
       - ./conf.d/ui/app.conf:/etc/ui/app.conf
       - ./conf.d/ui/private_key.pem:/etc/ui/private_key.pem
     depends_on:
-      - mysql
+  #    - mysql
       - registry
   jobservice:
     image: demoregistry.dataman-inc.com/library/centos7-docker-harborjobservice:v0.3.5.2016090300 
@@ -49,6 +49,6 @@ services:
       - 80:80
       - 443:443
     depends_on:
-      - mysql
+  #    - mysql
       - registry
       - ui

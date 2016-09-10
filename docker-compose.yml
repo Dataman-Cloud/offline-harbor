@@ -1,7 +1,7 @@
 version: '2'
 services:
   registry:
-    image: demoregistry.dataman-inc.com/library/centos7-docker-registry:v2.5.0.2016090301
+    image: offlineregistry.dataman-inc.com:5000/library/centos7-docker-registry:v2.5.0.2016090301
     restart: always
     volumes:
       - /data/registry:/storage
@@ -20,7 +20,7 @@ services:
   #  env_file:
   #    - ./conf.d/db/env
   ui:
-    image: demoregistry.dataman-inc.com/library/centos7-docker-harbor:v0.3.5.2016090300 
+    image: offlineregistry.dataman-inc.com:5000/library/centos7-docker-harbor:v0.3.5.2016090300 
     env_file:
       - ./conf.d/ui/env
     restart: always
@@ -31,7 +31,7 @@ services:
   #    - mysql
       - registry
   jobservice:
-    image: demoregistry.dataman-inc.com/library/centos7-docker-harborjobservice:v0.3.5.2016090300 
+    image: offlineregistry.dataman-inc.com:5000/library/centos7-docker-harborjobservice:v0.3.5.2016090300 
     env_file:
       - ./conf.d/jobservice/env
     restart: always
@@ -41,7 +41,7 @@ services:
     depends_on:
       - ui
   proxy:
-    image: demoregistry.dataman-inc.com/library/centos7-nginx-1.10.1:latest 
+    image: offlineregistry.dataman-inc.com:5000/library/centos7-nginx-1.10.1:latest 
     restart: always
     volumes:
       - ./conf.d/nginx:/etc/nginx

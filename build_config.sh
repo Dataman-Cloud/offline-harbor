@@ -13,6 +13,7 @@ replace_var(){
     echo $files | xargs sed -i 's#--HARBOR_MYSQL_USR--#'$HARBOR_MYSQL_USR'#g'
     echo $files | xargs sed -i 's#--HARBOR_MYSQL_PWD--#'$HARBOR_MYSQL_PWD'#g'
     echo $files | xargs sed -i 's#--HARBOR_SERVICE_IP--#'$HARBOR_SERVICE_IP'#g'
+    echo $files | xargs sed -i 's#--HARBOR_DOMAIN--#'$HARBOR_DOMAIN'#g'
     echo $files | xargs sed -i 's#--HARBOR_ADMIN_PASSWORD--#'$HARBOR_ADMIN_PASSWORD'#g'
 }
 

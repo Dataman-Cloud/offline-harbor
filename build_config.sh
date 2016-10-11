@@ -8,8 +8,6 @@ set -eu
 
 replace_var(){
     files=$@
-    echo $files | xargs sed -i 's#--HARBOR_MYSQL_HOST--#'$HARBOR_MYSQL_HOST'#g'
-    echo $files | xargs sed -i 's#--HARBOR_MYSQL_PORT--#'$HARBOR_MYSQL_PORT'#g'
     echo $files | xargs sed -i 's#--HARBOR_MYSQL_USR--#'$HARBOR_MYSQL_USR'#g'
     echo $files | xargs sed -i 's#--HARBOR_MYSQL_PWD--#'$HARBOR_MYSQL_PWD'#g'
     echo $files | xargs sed -i 's#--HARBOR_SERVICE_IP--#'$HARBOR_REGISTRY_IP'#g'

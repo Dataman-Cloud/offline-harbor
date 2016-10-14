@@ -5,3 +5,4 @@ cd $base_dir
 ./build_config.sh
 docker-compose -p harbor_registry up -d
 #./import_sql.sh
+./check.sh

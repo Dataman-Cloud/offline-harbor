@@ -2,4 +2,4 @@
 base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
 
-docker-compose -p harbor_registry stop
+docker-compose -p dataman stop

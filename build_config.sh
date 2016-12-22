@@ -2,7 +2,7 @@
 
 set -eu
 
-. ../config.cfg
+. ./config.cfg
 
 #export LC_CTYPE=C
 

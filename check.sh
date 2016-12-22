@@ -6,7 +6,7 @@ cd $base_dir
 function check_port(){
 	name=$1
 	port=$2
-	netstat -lntp |grep $port &>/dev/null && echo "$name is ok" || (echo "$name is error";exit 1)
+	netstat -lntp |grep ":$port[[:space:]]" &>/dev/null && echo "$name is ok" || (echo "$name is error";exit 1)
 }
 
 check_port proxy-harbor 80

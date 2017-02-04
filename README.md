@@ -23,3 +23,9 @@
 如果用已有数据库则需要导入数据库 registry
 
     mysql -h x.x.x.x -u root -p < ./config/db/registry.sql
+    
+### 镜像同步
+
+harbor 默认支持 push方式的镜像同步，配置方法参考harbor官方文档
+
+sync_images.py 提供 pull 方式对比同步镜像，配置文件看脚本内容

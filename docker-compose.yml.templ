@@ -9,7 +9,7 @@ services:
     environment:
       - GODEBUG=netdns=cgo
     ports:
-      - 5001:5001
+      - --harbor_ip--:5001:5001
     command:
       ["serve", "/etc/registry/config.yml"]
   mysql:
@@ -47,8 +47,8 @@ services:
     volumes:
       - ./conf.d/nginx:/etc/nginx
     ports:
-      - 80:80
-      - 443:443
+      - --harbor_ip--:80:80
+      - --harbor_ip--:443:443
     depends_on:
       - mysql
       - registry

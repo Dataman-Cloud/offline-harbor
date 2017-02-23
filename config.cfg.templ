@@ -1,0 +1,13 @@
+# harbor + jobserver +  registry + ui
+HARBOR_MYSQL_USR="harbor"
+HARBOR_MYSQL_PWD="123456"
+HARBOR_REGISTRY_IP="192.168.1.213" ## 用户使用registry ip , Need to check
+HARBOR_HARBOR_IP="192.168.1.213" ## 用户使用harbor ip，如果需要跨机房同步填写外网IP, 只是局域网访问同上 HARBOR_REGISTRY_IP, Need to check
+HARBOR_ADMIN_PASSWORD="Harbor12345"
+# images
+REGISTRY_URL="offlineregistry.dataman-inc.com:5000"
+IMAGE_REGISTRY="$REGISTRY_URL/--registry--"
+IMAGE_HARBOR_UI="$REGISTRY_URL/--harbor_ui--"
+IMAGE_HARBOR_JOB="$REGISTRY_URL/--harbor_job--"
+IMAGE_MYSQL="$REGISTRY_URL/--mysql--"
+IMAGE_NGINX="$REGISTRY_URL/--nginx--"

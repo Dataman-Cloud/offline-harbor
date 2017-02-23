@@ -5,8 +5,8 @@ base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
 
 # build image
-./images/save.sh
-./images/load.sh
+#./images/save.sh
+#./images/load.sh
 
 # build config
 ./build_config.sh
@@ -20,4 +20,3 @@ sed -i 's/--harbor_ip--/'$HARBOR_HARBOR_IP'/g'  docker-compose.yml && \
 
 # run server    
 docker-compose -p dataman up -d
-#./import_sql.sh

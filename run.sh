@@ -4,11 +4,13 @@ base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
 . ./config.cfg
 
-# build image
+# Export harbor system images
 #./images/save.sh
+
+# Import harbor system images
 #./images/load.sh
 
-# build config
+# create config
 ./build_config.sh
 
 # run server    

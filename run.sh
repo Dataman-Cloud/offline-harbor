@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-. ./config.cfg
 base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
+. ./config.cfg
 
 # build image
 #./images/save.sh

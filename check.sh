@@ -2,6 +2,7 @@
 set -e
 base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
+. ./config.cfg
 
 function check_port(){
 	name=$1
@@ -11,4 +12,4 @@ function check_port(){
 
 check_port proxy-harbor 80
 check_port proxy-registry 443
-docker login -u admin -p Harbor12345 127.0.0.1 | grep "Login Succeeded" &>/dev/null && echo "harbor and registry ok" && docker logout 127.0.0.1 &>/dev/null || (echo "harbor or registry error";exit 1)
+docker login -u admin -p Harbor12345 "$HARBOR_HARBOR_IP" | grep "Login Succeeded" &>/dev/null && echo "harbor and registry ok" && docker logout "$HARBOR_HARBOR_IP" &>/dev/null || (echo "harbor or registry error";exit 1)

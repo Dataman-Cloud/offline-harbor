@@ -49,7 +49,7 @@ create_compose_file(){
 	IMAGES_NAME=$(jq 'keys' $IMAGE_LIST_FILE_PATH | grep \" | sed 's/\"//g' |sed 's/,//g')
 	for image in $IMAGES_NAME
 	do
-        	change_images $image $HARBOR_FILE && \
+        	change_images $image $HARBOR_FILE
 	done
 }
 

@@ -35,7 +35,7 @@ create_conf(){
 change_images(){
         IMAGE=$(jq ."$1"  $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
         IMAGEx="--$1--"
-        sed -i 's#'$IMAGEx'#'$REGISTRY_URL/$IMAGE'#g' $2
+        sed -i 's#'$IMAGEx'#'$IMAGE'#g' $2
 }
 
 create_compose_file(){

@@ -27,10 +27,10 @@ docker_images_save(){
 }
 
 main(){
-	docker_images_save registry.tar $REGISTRY_URL'\'$IMAGE_REGISTRY && \
-	docker_images_save nginx.tar $REGISTRY_URL'\'$IMAGE_NGINX && \
-	docker_images_save mysql.tar $REGISTRY_URL'\'$IMAGE_MYSQL && \
-	docker_images_save harbor_ui.tar $REGISTRY_URL'\'$IMAGE_HARBOR_UI && \
-	docker_images_save harbor_job.tar $REGISTRY_URL'\'$IMAGE_HARBOR_JOB
+	docker_images_save registry.tar $REGISTRY_URL'/'$IMAGE_REGISTRY && \
+	docker_images_save nginx.tar $REGISTRY_URL'/'$IMAGE_NGINX && \
+	docker_images_save mysql.tar $REGISTRY_URL'/'$IMAGE_MYSQL && \
+	docker_images_save harbor_ui.tar $REGISTRY_URL'/'$IMAGE_HARBOR_UI && \
+	docker_images_save harbor_job.tar $REGISTRY_URL'/'$IMAGE_HARBOR_JOB
 }
 main

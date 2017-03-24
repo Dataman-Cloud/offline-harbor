@@ -4,15 +4,6 @@ base_dir=$(cd `dirname $0` && pwd)
 cd $base_dir
 . ./config.cfg
 
-function images(){
-# Export harbor system images
-#./images/save.sh
-
-# Import harbor system images
-#./images/load.sh
-}
-
-
 function install(){
 	echo "######### init config ########"
 	# create config

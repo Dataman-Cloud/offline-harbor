@@ -23,15 +23,13 @@ function check_port(){
 
 function check(){
 	echo "######### check harbor ########"
-	check_port proxy-harbor 80
-	check_port proxy-registry 443
 	count=30
 
 	for i in `seq 1 $count`
 	do
 	     sleep 2
 	     docker login -u admin -p "$HARBOR_ADMIN_PASSWORD" "$HARBOR_HARBOR_IP"  &>/dev/null && \
-			docker logout "$HARBOR_HARBOR_IP" &>/dev/null  && break || echo -n "."
+			docker logout "$HARBOR_HARBOR_IP" &>/dev/null  && echo "harbor ok" && break || echo -n "."
 
 	     if [ $i -eq $count ];then
 		      echo "harbor or registry error"

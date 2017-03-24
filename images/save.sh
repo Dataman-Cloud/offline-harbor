@@ -7,6 +7,15 @@ cd $base_dir
 
 rm -Rf *.tar
 
+
+IMAGE_LIST_FILE_PATH="../../offlinesry/imagelist.txt"
+IMAGE_REGISTRY=$(jq ."registry" $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
+IMAGE_NGINX=$(jq ."nginx" $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
+IMAGE_MYSQL=$(jq ."mysql" $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
+IMAGE_HARBOR_UI=$(jq ."harbor_ui" $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
+IMAGE_HARBOR_JOB=$(jq ."harbor_job" $IMAGE_LIST_FILE_PATH | sed 's/\"//g'|sed 's/\//\\\//g')
+
+
 docker_images_save(){
         docker save -o $1 $2
         if [ $? -eq 0 ];then

@@ -33,8 +33,8 @@ main(){
 	check
 
 	echo "------------------------------------------------------------"
-	echo "Harbor addr: http://$LOCAL_IP"
-	echo "Registry addr: $LOCAL_IP"
+	echo "Harbor addr: http://$HARBOR_HARBOR_IP"
+	echo "Registry addr: $HARBOR_HARBOR_IP"
 	echo "Default user: admin"
 	echo "Default password : $HARBOR_ADMIN_PASSWORD"
 	echo "------------------------------------------------------------"

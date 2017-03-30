@@ -5,10 +5,11 @@ cd $base_dir
 . ./config.cfg
 
 function install(){
-	echo "######### init config ########"
-	# create config
-	./build_config.sh
-
+	if [ x"$ALONE_DEPLOY" == x"false" ];then
+		echo "######### init config ########"
+		# create config
+		./build_config.sh
+	fi
 	echo "######### install harbor ########"
 	# run server    
 	export COMPOSE_HTTP_TIMEOUT=300

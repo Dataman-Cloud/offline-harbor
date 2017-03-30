@@ -1,8 +1,9 @@
 #!/bin/bash
+base_dir=$(cd `dirname $0` && pwd)
+cd $base_dir
 set -e
 #export LC_CTYPE=C
 
-set -eu
 
 . ./config.cfg
 IMAGE_LIST_FILE_PATH='../offlinesry/imagelist.txt'

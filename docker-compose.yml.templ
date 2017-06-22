@@ -3,11 +3,14 @@ services:
   registry:
     image: offlineregistry.dataman-inc.com:5000/--registry--
     restart: always
+    logging:
+      driver: journald
     volumes:
       - /data/registry:/storage
       - ./conf.d/registry/:/etc/registry/
     environment:
       - GODEBUG=netdns=cgo
+      - REGISTRY_STORAGE_DELETE_ENABLED=true
     ports:
       - --harbor_ip--:5001:5001
     command:
@@ -15,6 +18,8 @@ services:
   mysql:
     image: offlineregistry.dataman-inc.com:5000/--mysql--
     restart: always
+    logging:
+      driver: journald
     volumes:
       - /data/lib/harbormysql:/var/lib/mysql
       - ./conf.d/db/registry.sql:/docker-entrypoint-initdb.d/registry.sql
@@ -25,6 +30,8 @@ services:
     env_file:
       - ./conf.d/ui/env
     restart: always
+    logging:
+      driver: journald
     volumes:
       - ./conf.d/ui/app.conf:/etc/ui/app.conf
       - ./conf.d/ui/private_key.pem:/etc/ui/private_key.pem
@@ -36,6 +43,8 @@ services:
     env_file:
       - ./conf.d/jobservice/env
     restart: always
+    logging:
+      driver: journald
     volumes:
       - /data/job_logs:/var/log/jobs
       - ./conf.d/jobservice/app.conf:/etc/jobservice/app.conf
@@ -44,6 +53,8 @@ services:
   proxy:
     image: offlineregistry.dataman-inc.com:5000/--nginx-- 
     restart: always
+    logging:
+      driver: journald
     volumes:
       - ./conf.d/nginx:/etc/nginx
     ports:
